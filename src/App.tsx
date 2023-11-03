@@ -2,6 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ExpenseList from "./components/ExpenseList";
 import { useState } from "react";
 import ExpenseFilter from "./components/ExpenseFilter";
+import ExpenseForm from "./components/ExpenseForm";
+
+export const categories =["Groceries", "Utilities", "Entertainment"];
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -18,6 +21,9 @@ const App = () => {
 
   return (
     <>
+    <div className="mb-5">
+      <ExpenseForm></ExpenseForm>
+    </div>
       <ExpenseFilter
         onselectCategory={(category) => setSelectedCategory(category)}
       ></ExpenseFilter>
